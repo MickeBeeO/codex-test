@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Random Song</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Slumpa en låt från Spotify-spellista</h1>
+      <p>
+        Logga in med Spotify, skriv playlist-ID och få en helt slumpmässig låt från just den
+        spellistan.
+      </p>
+
+      <section class="card">
+        <label for="clientId">Spotify Client ID</label>
+        <input id="clientId" type="text" placeholder="t.ex. 123abc..." autocomplete="off" />
+
+        <label for="playlistId">Playlist-ID</label>
+        <input
+          id="playlistId"
+          type="text"
+          placeholder="t.ex. 37i9dQZF1DXcBWIGoYBM5M"
+          autocomplete="off"
+        />
+
+        <small>
+          Tips: Lägg till
+          <code>http://127.0.0.1:5500</code>
+          (eller din URL) i
+          <strong>Redirect URI</strong>
+          i Spotify Developer Dashboard.
+        </small>
+
+        <div class="actions">
+          <button id="loginBtn">Logga in med Spotify</button>
+          <button id="randomBtn" disabled>Slumpa låt</button>
+        </div>
+      </section>
+
+      <section id="status" class="status"></section>
+      <section id="result" class="result"></section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
